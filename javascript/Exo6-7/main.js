@@ -1,21 +1,24 @@
-function factoriel(n) {
-    let resultat = n;
-    
-    for(i = 0; i < n; i++){
-        stock = factoriel(i); 
-        n += stock;
-    }
-    return resultat;
+//EXO6:q
+demande = prompt("Saisissez la valeur de N: ");
+calcul = 0
+while(demande > calcul){
+    calcul = calcul + 1
 }
+alert("le resultat est : " +  calcul )
 
-
-
-
-
+//variables numériques
 /*
-while (var i < parseInt(n)){
-    factoriel(n) = i;
-    i++;
-}
-*/
+var stock = 0;
+var i;
+var N;
 
+prompt("Saisissez la valeur de N: ");
+parseInt(N) = window.prompt;
+
+for (i = 0; i <= parseInt(N); i++){
+    stock += i;
+}
+
+alert("Le résultat est: " + stock);*/
+
+//EXO7:
