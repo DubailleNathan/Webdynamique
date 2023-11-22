@@ -12,10 +12,14 @@ ModifText("Hello");
 //EXO9:
 
 function ModifText(letext){
-    Div.innerHTML = letext;
+ 
     alert("Je vais modifier les divs");
-    var Div = document.getElementsByName("lesdiv");
-    console.log(Div[3].letext); //displays "INPUT"
+    var desDiv = document.getElementsByName("lesdiv");
+    console.log(desDiv[0].innerHTML);
+
+    desDiv.forEach((UneDiv) => {
+        UneDiv.innerHTML = letext;
+    });
 }
 
 ModifText("Hello");
