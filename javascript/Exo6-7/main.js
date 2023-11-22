@@ -23,12 +23,3 @@ alert("Le résultat est: " + stock);*/
 
 //EXO7:
 
-function factoriel(n) {
-    let resultat = n;
-    i = 0; 
-
-    while(resultat > i){
-        resultat += 1
-    }
-    return resultat;
-}
