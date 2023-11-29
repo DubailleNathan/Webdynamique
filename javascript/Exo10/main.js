@@ -27,14 +27,27 @@ Div2.addEventListener("mouseover", UneProcedureQuiSurvole);
 var Div3 = document.getElementById("MaDiv3");
 Div3.addEventListener("keydown", UneProcedureQuiEcrit);
 
+
 function UneProcedureQuiChangeLeTexte(evenement){
     compteur++;
     evenement.target.innerHTML = "On m'a cliqué dessus " + compteur + " fois";
+    if(evenement.target.className == "did"){
+        evenement.target.className = "coucou";
+    }else{
+        evenement.target.className = "did";
+    }
+    
+   
 }
 
 function UneProcedureQuiSurvole(evenement){
     compteur2++;
     evenement.target.innerHTML = "On m'a survolé " + compteur2 + " fois";
+    if(evenement.target.className == "visible"){
+        evenement.target.className = "hidden";
+    }else{
+        evenement.target.className = "visible";
+    }
 }
 
 function UneProcedureQuiEcrit(evenement){
@@ -48,3 +61,6 @@ function ModifText3(letext){
     Div3.innerHTML = letext;
       
 }
+
+
+
