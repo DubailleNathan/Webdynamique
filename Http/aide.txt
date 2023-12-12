@@ -1,0 +1,4 @@
+Une api est un service (bout de code) capable de répondre à une requêtes
+
+HTTP => port 80
+HTTPS => port 443
