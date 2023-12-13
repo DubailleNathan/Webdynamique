@@ -1,0 +1,57 @@
+
+//Exemple
+GET /exemple.html HTTP/1.1
+Host: www.example.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)
+Accept: text/html,application/xhtml+xml,application/xml,q=0.9,image/webp;q=0.8
+Accept-Language: fr-FR,fr;q=0.8,en-US;q=0.5,en;q=0.3
+
+
+
+
+
+
+
+//COOKIES:
+
+//Exemple création Cookie
+Set-Cookie: nom=John; expires=Thu, 01 Jan 2024 00:00:00 GMT; path=/
+Set-Cookie: préférence=langue=français; path=/; secure; HttpOnly
+
+//Envoie
+Cookie: nom=John; préférence=langue=français
+
+
+//SUR nodeJs
+
+//Création
+app.get('/set-cookie', (req, res) => {
+    // Créez un cookie nommé "monCookie" avec une valeur "valeurDuCookie".
+    res.cookie('monCookie', 'valeurDuCookie');
+    res.send('Cookie défini !');
+  });
+
+//Lecture
+app.get('/get-cookie', (req, res) => {
+    // Lisez la valeur du cookie nommé "monCookie".
+    const monCookie = req.cookies.monCookie;
+    res.send(`Valeur du cookie : ${monCookie}`);
+  });
+
+//Modification
+app.get('/update-cookie', (req, res) => {
+    // Mettez à jour la valeur du cookie.
+    res.cookie('monCookie', 'nouvelleValeurDuCookie');
+  
+    // Supprimez le cookie en définissant une date d'expiration passée.
+    // Cela effacera le cookie du navigateur.
+    res.cookie('monCookie', '', { expires: new Date(0) });
+  
+    res.send('Cookie mis à jour et supprimé !');
+  });
+
+  //Options de cookie
+  res.cookie('monCookie', 'valeur', {
+    secure: true,
+    expires: new Date(Date.now() + 3600000), // Date d'expiration dans 1 heure
+  });

@@ -1,0 +1,65 @@
+get
+
+post
+
+put
+
+delete
+
+Exemple de requête:
+
+Type   URI        Version   HEAD Métadonnées  BODY Data
+Post  /index.php  HTTP 1.1  Cookie: PHP2E32E  Login=julien&pass=Code
+
+
+
+
+
+GET /chemin/vers/la/ressource HTTP/1.1
+Host: www.example.com
+
+GET indique la méthode HTTP utilisée.
+/chemin/vers/la/ressource est l'URL de la ressource que vous souhaitez récupérer.
+HTTP/1.1 est la version du protocole HTTP.
+Host: www.example.com spécifie l'hôte auquel vous faites la demande
+
+Par exemple, en JavaScript, vous pouvez utiliser l'API fetch() pour effectuer des requêtes GET depuis un navigateur web.
+
+
+//Exemple fetch()
+// URL de l'API ou de la ressource que vous souhaitez interroger
+const url = 'https://example.com/api/data';
+
+// Effectuer une requête GET
+fetch(url)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('La requête n\'a pas abouti.');
+    }
+    return response.json(); // ou response.text() si la réponse est en texte brut
+  })
+  .then(data => {
+    // Traitez les données ici
+    console.log(data);
+  })
+  .catch(error => {
+    console.error('Une erreur s\'est produite :', error);
+  });
+
+
+
+POST /chemin/vers/la/ressource HTTP/1.1
+Host: www.example.com
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 26
+
+param1=valeur1&param2=valeur2
+
+
+POST indique la méthode HTTP utilisée.
+/chemin/vers/la/ressource est l'URL de la ressource vers laquelle vous envoyez les données.
+HTTP/1.1 est la version du protocole HTTP.
+Host: www.example.com spécifie l'hôte auquel vous faites la demande.
+Content-Type indique le type de contenu envoyé dans le corps de la requête. Il peut s'agir de application/x-www-form-urlencoded, application/json, multipart/form-data, etc., en fonction du type de données que vous envoyez.
+Content-Length indique la longueur des données envoyées.
+Le corps de la requête contient les données à envoyer, généralement sous la forme de paires clé-valeur pour les données de formulaire.
